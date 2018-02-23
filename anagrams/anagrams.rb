@@ -1,12 +1,12 @@
 
-#Time Complexity: O(n!)
-#Space Complexity: O(n!)
+#Time Complexity: O(n*n!)
+#Space Complexity: O(n*n!)
 def first_anagram?(str1, str2)
   str1.split(//).permutation(str2.length).include?(str2.split(//))
 end
 
-#Time Compexity: O(n^2)
-#Space Complexity: O(1)
+#Time Compexity: O(n^3)
+#Space Complexity: O(n)
 def second_anagram?(str1, str2)
   str_split = str2.split(//)
 
@@ -20,7 +20,7 @@ def second_anagram?(str1, str2)
 end
 
 #Time Compexity: O(n log n)
-#Space Complexity: O(log n)
+#Space Complexity: O(n)
 def third_anagram?(str1, str2)
   str1.split(//).sort == str2.split(//).sort
 end
@@ -38,11 +38,11 @@ def fourth_anagram?(str1, str2)
     hsh1[char] -= 1
   end
 
-  hsh1.values.all?{|el| el == 0}
+  hsh1.values.all? { |el| el == 0 }
 end
 
 #Time Complexity: O(n)
-#Space Complexity: (1)
+#Space Complexity: O(1)
 def anagram?(str1, str2)
   (str2.split(//) - str1.split(//)).empty?
 end
