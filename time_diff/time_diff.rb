@@ -18,7 +18,7 @@ class Array
     min
   end
 
-  #O(n^2)
+  #O(n^3)
   def each_cons_revamped
     max = self.first
     arr = []
